@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Xavier | Portfólio Profissional</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CONTROLES DO LIVRO -->
+    <input type="radio" name="book-control" id="cover" checked>
+    <input type="radio" name="book-control" id="page1">
+    <input type="radio" name="book-control" id="page2">
+    <input type="radio" name="book-control" id="page3">
+    <input type="radio" name="book-control" id="close">
+
+    <div class="scene">
+        <div class="book-container">
+
+            <!-- LOMBADA -->
+            <div class="spine"></div>
+
+            <!-- CAPA -->
+            <label for="page1" class="hard-cover">
+                <div class="front-face">
+                    <div class="gold-border">
+                        <span class="univ-header">PORTFÓLIO PROFISSIONAL</span>
+                        <h1>Mariana Xavier</h1>
+                        <hr class="separator">
+                        <h2>Mary Hunter</h2>
+                        <p class="spec">Tecnologia·Arte·Produção</p>
+                    </div>
+                    <span class="open-msg">ABRIR VOLUME I</span>
+                </div>
+                <div class="inner-face"></div>
+            </label>
+
+            <!-- PÁGINA 1 -->
+            <div class="page p1">
+                <div class="front">
+                    <div class="paper-texture">
+                        <div class="header-row">
+                            <img src="perfil.jpg" alt="Foto de Mariana Xavier" class="stamp-photo">
+                            <div class="header-text">
+                                <h3>Registro do Autor</h3>
+                                <p>ID: MX-2026 · Status: Ativo</p>
+                            </div>
+                        </div>
+
+                        <p><strong>Mariana Xavier</strong> (Mary Hunter), 31 anos.</p>
+                        <p>
+                           Sou Desenvolvedora Full Stack, artista e produtora de eventos, com atuação focada na integração entre tecnologia, design e gestão criativa. 
+                           Trabalho no desenvolvimento de projetos multidisciplinares que unem inovação técnica, identidade visual e experiências significativas, 
+                           sempre buscando soluções criativas e funcionais. Ao longo da minha trajetória, 
+                           transito entre o universo digital e o artístico, conectando pessoas, 
+                           ideias e tecnologias para transformar conceitos em projetos impactantes.
+                        </p>
+
+                        <p class="quote">
+                            “A tecnologia é a ferramenta. A arte é a alma.”
+                        </p>
+
+                        <label for="page2" class="next-btn">Capítulo II · Experiência ➜</label>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="paper-texture">
+                        <h3>Experiência Profissional</h3>
+
+                        <p><strong>Produtora de Eventos · Anime-se</strong><br>
+                        <small>2018 — Presente</small></p>
+                        <p>
+                            Organização, logística e coordenação de eventos de cultura geek,
+                            tecnologia e games. Gestão de equipes, parcerias e crescimento
+                            de público.
+                        </p>
+
+                        <p><strong>Cinted.Tech</strong><br>
+                        <small>Suporte & Tecnologia</small></p>
+                        <p>
+                            Atuação em infraestrutura, suporte técnico e sucesso do cliente.
+                        </p>
+
+                        <p><strong>Projetos Incentivados</strong></p>
+                        <p>
+                            Game Noel (Lei Paulo Gustavo) e
+                            Tecnologia & Cultura (Lei Aldir Blanc).
+                        </p>
+
+                        <label for="cover" class="prev-btn">❮ Voltar à Capa</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 2 -->
+            <div class="page p2">
+                <div class="front">
+                    <div class="paper-texture">
+                        <h3>Formação Acadêmica</h3>
+                        <ul class="academic-list">
+                            <li><strong>Gestão de Tecnologia da Informação</strong> — Estácio (2019–2021)</li>
+                            <li><strong>Design Gráfico</strong> — Anhanguera (2018–2022)</li>
+                        </ul>
+
+                        <h3>Certificações & Cursos</h3>
+                        <ul class="academic-list">
+                            <li>Programação e Desenvolvimento de Dados</li>
+                            <li>Manutenção de Equipamentos Eletrônicos</li>
+                            <li>Desenvolvimento de Websites</li>
+                            <li>Idiomas: Inglês e Espanhol (Intermediário)</li>
+                        </ul>
+
+                        <label for="page3" class="next-btn">Capítulo III · Projetos ➜</label>
+                        <label for="cover" class="corner-btn">❮</label>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="paper-texture">
+                        <h3>Competências Técnicas</h3>
+                        <div class="grid-skills">
+                            <span>Python / Django</span>
+                            <span>JavaScript / React</span>
+                            <span>Vue.js / Laravel</span>
+                            <span>Next.js / Docker</span>
+                            <span>SQL / PostgreSQL</span>
+                            <span>Adobe · Blender · AutoCAD</span>
+                        </div>
+
+                        <h3>Habilidades Pessoais</h3>
+                        <p>
+                            Comunicação · Liderança · Organização ·
+                            Gestão de Equipes · Trabalho sob Pressão
+                        </p>
+
+                        <label for="page1" class="prev-btn">❮ Página Anterior</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 3 -->
+            <div class="page p3">
+                <div class="front">
+                    <div class="paper-texture scroll-y">
+                        <h3>Projetos Relevantes</h3>
+
+                        <div class="case-study">
+                            <strong>Portal Ouro Branco</strong>
+                            <small>Full Stack · B2B</small>
+                            <p>Sistema de gestão e vendas para atacado.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <strong>Respawn SquadUp</strong>
+                            <small>Next.js · Social</small>
+                            <p>Rede social gamer com salas interativas.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <strong>Sopra-Fitas</strong>
+                            <small>React · Emulação</small>
+                            <p>Plataforma web de emulação retrô.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <strong>Aurum Analytics</strong>
+                            <small>Data · BI</small>
+                            <p>Dashboard de inteligência de dados.</p>
+                        </div>
+
+                        <label for="close" class="next-btn">Contato Final ➜</label>
+                        <label for="page1" class="corner-btn">❮</label>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="paper-texture">
+                        <h3>Repositórios & Extras</h3>
+                        <ul class="repo-list">
+                            <li>LootRush — E-commerce Python</li>
+                            <li>Chatbots — Evolution API</li>
+                            <li>Plataformas Gamer & Sociais</li>
+                        </ul>
+
+                        <a href="https://github.com/maryhunter177-jpg" target="_blank" class="ext-link">
+                            Acessar GitHub
+                        </a>
+
+                        <label for="page2" class="prev-btn">❮ Voltar</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTRACAPA -->
+            <div class="back-cover-thick">
+                <div class="paper-stack-side"></div>
+                <div class="back-inner-content">
+                    <h3>Contato</h3>
+
+                    <div class="contact-card">
+                        <p><strong>Email:</strong> mary.hunter177@gmail.com</p>
+                        <p><strong>Telefone:</strong> (33) 9 8847-8948</p>
+                        <p><strong>Local:</strong> Caratinga · MG</p>
+                    </div>
+
+                    <div class="social-icons-text">
+                        <a href="https://wa.me/5533988478948" target="_blank">WhatsApp</a> |
+                        <a href="https://www.linkedin.com/in/mariana-xavier-85a125341/" target="_blank">LinkedIn</a> |
+                        <a href="https://instagram.com/maryhunteroficial" target="_blank">Instagram</a> |
+                        <a href="https://www.youtube.com/@maryhunteroficial" target="_blank">YouTube</a>
+                    </div>
+
+                    <label for="page3" class="corner-btn left">❮</label>
+                    <label for="cover" class="close-book-final">Fechar Volume</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
