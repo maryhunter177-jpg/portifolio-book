@@ -1,0 +1,30 @@
+/* mobile.css */
+@media screen and (max-width: 800px) {
+    :root { 
+        --book-width: 90vw; 
+        --book-height: 82vh; 
+    }
+    
+    /* Centraliza o livro sem cortar as bordas */
+    input:not(#cover):checked ~ .scene .book-container { 
+        transform: translateX(0) scale(0.95) !important; 
+    }
+
+    /* Scroll interno para o texto não empurrar o botão para fora */
+    .paper-texture { 
+        padding: 20px !important; 
+        overflow-y: auto !important; 
+        display: block !important;
+    }
+
+    /* Diminuir levemente a fonte para caber tudo na tela do celular */
+    p, li { font-size: 0.9rem !important; }
+    h1 { font-size: 1.8rem !important; }
+    .stamp-photo { width: 80px !important; height: 100px !important; }
+
+    /* Força as páginas a ficarem visíveis no clique mobile */
+    #cover:checked ~ .scene .hard-cover { z-index: 100; }
+    #page1:checked ~ .scene .p1 { z-index: 100; }
+    #page2:checked ~ .scene .p2 { z-index: 100; }
+    #page3:checked ~ .scene .p3 { z-index: 100; }
+}

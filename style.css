@@ -28,7 +28,7 @@ input[type="radio"] { display: none; }
     width: 100%; height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateY(-30deg); /* Inclinação inicial */
+    transform: rotateY(-30deg); 
     transition: transform 1s ease;
 }
 
@@ -48,11 +48,11 @@ input[type="radio"] { display: none; }
     transform-origin: left;
     transform-style: preserve-3d;
     transition: transform var(--speed) cubic-bezier(0.645, 0.045, 0.355, 1);
-    z-index: 50; /* Capa sempre no topo quando fechada */
+    z-index: 50; 
     cursor: pointer;
 }
 
-.hard-cover::before { /* Espessura lateral */
+.hard-cover::before { 
     content: ''; position: absolute; top: 0; right: 0; width: 6px; height: 100%;
     background: #a1a0a0; transform: rotateY(90deg) translateZ(3px);
 }
@@ -72,16 +72,9 @@ input[type="radio"] { display: none; }
 h1 { font-family: 'Times New Roman', serif; font-size: 3rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; text-shadow: 1px 2px 2px rgba(0,0,0,0.5); }
 h2 { font-size: 1.5rem; font-weight: normal; margin-top: 10px; font-style: italic; opacity: 0.9; }
 .separator { width: 50px; border: 0; border-top: 2px solid var(--gold); margin: 20px 0; }
-.spec { 
-    font-size: 0.9rem; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-    margin-top: auto; 
-    color: #fff; /* <-- Mudei para BRANCO aqui */
-}
+.spec { font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; margin-top: auto; color: #fff; }
 .open-msg { position: absolute; bottom: 15px; right: 20px; font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; }
 
-/* Verso da Capa (Azul Liso) */
 .inner-face {
     position: absolute; width: 100%; height: 100%;
     background-color: var(--cover-color);
@@ -90,10 +83,9 @@ h2 { font-size: 1.5rem; font-weight: normal; margin-top: 10px; font-style: itali
     border-radius: 4px 0 0 4px; border-right: 1px solid #918f8f;
 }
 
-/* --- CONTRACAPA (FUNDO) --- */
 .back-cover-thick {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 1; /* Fica no fundo */
+    z-index: 1; 
     background-color: var(--page-bg);
     border-radius: 4px 10px 10px 4px;
     box-shadow: 15px 15px 40px rgba(0,0,0,0.6);
@@ -114,7 +106,6 @@ h2 { font-size: 1.5rem; font-weight: normal; margin-top: 10px; font-style: itali
     background-image: linear-gradient(to right, #e8e4d9, #fff 10%);
 }
 
-/* --- PÁGINAS INTERNAS --- */
 .page {
     position: absolute; top: 4px; left: 0; width: 98%; height: 98%;
     transform-origin: left;
@@ -122,7 +113,6 @@ h2 { font-size: 1.5rem; font-weight: normal; margin-top: 10px; font-style: itali
     transition: transform var(--speed) cubic-bezier(0.645, 0.045, 0.355, 1), z-index 0.1s linear; 
 }
 
-/* ORDEM INICIAL DAS PÁGINAS (Quando estão na direita) */
 .p1 { top: 6px; z-index: 40; }
 .p2 { top: 8px; z-index: 30; }
 .p3 { top: 10px; z-index: 20; }
@@ -135,7 +125,6 @@ h2 { font-size: 1.5rem; font-weight: normal; margin-top: 10px; font-style: itali
 .back { transform: rotateY(180deg); background-image: linear-gradient(to left, rgba(0,0,0,0.05), transparent 10%); }
 .front { background-image: linear-gradient(to right, rgba(0,0,0,0.05), transparent 10%); }
 
-/* --- CONTEÚDO DAS PÁGINAS --- */
 .paper-texture { padding: 30px 40px; height: 100%; display: flex; flex-direction: column; }
 .scroll-y { overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--cover-color) #eee; }
 h3 { border-bottom: 2px solid var(--cover-color); padding-bottom: 5px; margin-bottom: 15px; color: var(--cover-color); text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px;}
@@ -168,44 +157,56 @@ p, li { font-size: 1rem; line-height: 1.6; color: #222; margin-bottom: 10px; tex
 .social-icons-text a { text-decoration: none; color: var(--cover-color); font-weight: bold; margin: 0 5px; }
 .contact-card p { margin-bottom: 5px; }
 
-
-/* --- LÓGICA DE ABERTURA E PILHA (A CORREÇÃO CRÍTICA) --- */
-
-/* Centraliza o livro ao abrir */
+/* LÓGICA DE ABERTURA */
 input:not(#cover):checked ~ .scene .book-container { transform: translateX(30%) rotateY(0deg); }
 
-/* 1. GIRAR A CAPA */
 #page1:checked ~ .scene .book-container .hard-cover,
 #page2:checked ~ .scene .book-container .hard-cover,
 #page3:checked ~ .scene .book-container .hard-cover,
-#close:checked ~ .scene .book-container .hard-cover { 
-    transform: rotateY(-180deg); 
-    z-index: 10; /* Vai para baixo da pilha da esquerda */
-}
+#close:checked ~ .scene .book-container .hard-cover { transform: rotateY(-180deg); z-index: 10; }
 
-/* 2. GIRAR PÁGINA 1 */
 #page2:checked ~ .scene .book-container .p1,
 #page3:checked ~ .scene .book-container .p1,
-#close:checked ~ .scene .book-container .p1 { 
-    transform: rotateY(-180deg); 
-    z-index: 20; /* Fica EM CIMA da Capa, mas EMBAIXO da P2 */
-}
+#close:checked ~ .scene .book-container .p1 { transform: rotateY(-180deg); z-index: 20; }
 
-/* 3. GIRAR PÁGINA 2 */
 #page3:checked ~ .scene .book-container .p2,
-#close:checked ~ .scene .book-container .p2 { 
-    transform: rotateY(-180deg); 
-    z-index: 30; /* Fica EM CIMA da P1 */
-}
+#close:checked ~ .scene .book-container .p2 { transform: rotateY(-180deg); z-index: 30; }
 
-/* 4. GIRAR PÁGINA 3 */
-#close:checked ~ .scene .book-container .p3 { 
-    transform: rotateY(-180deg); 
-    z-index: 40; /* Fica NO TOPO da pilha da esquerda */
-}
+#close:checked ~ .scene .book-container .p3 { transform: rotateY(-180deg); z-index: 40; }
 
-/* Responsivo */
+
+/* --- SÓ ALTERA NO CELULAR (MEDIA QUERY) --- */
 @media (max-width: 800px) {
-    :root { --book-width: 320px; --book-height: 520px; }
-    input:not(#cover):checked ~ .scene .book-container { transform: translateX(0) rotateY(0); }
+    :root { 
+        --book-width: 85vw; 
+        --book-height: 75vh; 
+    }
+    
+    body { overflow: auto; padding: 10px; }
+
+    /* Remove o movimento lateral que corta o livro no celular */
+    input:not(#cover):checked ~ .scene .book-container { 
+        transform: translateX(0) rotateY(0deg) !important; 
+    }
+    
+    .book-container { transform: rotateY(0deg); }
+
+    /* Aumenta a área de toque dos botões no celular */
+    label, .next-btn, .prev-btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Garante que o clique funcione na ordem certa no celular */
+    #cover:checked ~ .scene .hard-cover { z-index: 100; }
+    #page1:checked ~ .scene .p1 { z-index: 100; }
+    #page2:checked ~ .scene .p2 { z-index: 100; }
+    #page3:checked ~ .scene .p3 { z-index: 100; }
+
+    /* Ajuste visual para não esmagar conteúdo */
+    h1 { font-size: 2rem; }
+    .header-row { flex-direction: column; text-align: center; }
+    .paper-texture { padding: 15px 20px; }
 }
